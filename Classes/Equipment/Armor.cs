@@ -5,12 +5,16 @@ using System.Text;
 
 namespace FirstFantasy_FinalExam.Classes.Equipment
 {
-    public abstract class Weapon : IDescribable
+    class Armor : IDescribable
     {
-        public abstract string attack();
+        private string armorValue = "8";
+        public string GetarmorValue()
+        {
+            return armorValue;
+        }
         public string ShowInformation()
         {
-            return "This is a weapon";
+            return "This is a armor";
         }
     }
 }

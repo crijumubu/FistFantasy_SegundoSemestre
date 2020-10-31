@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace FirstFantasy.Classes.Player
+namespace FirstFantasy_FinalExam.Classes.Player
 {
-    public class Rouge : Character
+    public class Rogue : Character
     {
         public override string Taunt()
         {

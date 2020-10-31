@@ -4,8 +4,8 @@ using System.Text;
 
 namespace FirstFantasy_FinalExam.Interfaces
 {
-    public interface IDescribable
+    public interface IPlayer_sWeapon
     {
-        public string ShowInformation();
+        public string CurrentWeapon();
     }
 }
