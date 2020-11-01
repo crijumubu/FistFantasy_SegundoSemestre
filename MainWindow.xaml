@@ -13,7 +13,7 @@
             <ComboBoxItem Content="Rogue"/>
             <ComboBoxItem Content="Wizard"/>
         </ComboBox>
-        <Button Name="btnCreate" Content="Crear" HorizontalAlignment="Left" Height="33" Margin="297,339,0,0" VerticalAlignment="Top" Width="103" Click="BtnCreate_Click"/>
+        <Button Name="btnCreate" Content="Create" HorizontalAlignment="Left" Height="33" Margin="229,334,0,0" VerticalAlignment="Top" Width="103" Click="BtnCreate_Click"/>
         <ComboBox Name="cmbWeapon" HorizontalAlignment="Left" Margin="379,180,0,0" VerticalAlignment="Top" Width="120">
             <ComboBoxItem Content="Ax"/>
             <ComboBoxItem Content="Sword"/>
@@ -29,6 +29,8 @@
         <Label Content="Character type" HorizontalAlignment="Left" Height="26" Margin="199,113,0,0" VerticalAlignment="Top" Width="133"/>
         <Label Content="Weapon type" HorizontalAlignment="Left" Height="26" Margin="199,173,0,0" VerticalAlignment="Top" Width="133"/>
         <Label Content="Select your equipment" HorizontalAlignment="Left" Height="26" Margin="199,229,0,0" VerticalAlignment="Top" Width="133"/>
+        <Button Content="My characters" HorizontalAlignment="Left" Height="33" Margin="427,334,0,0" VerticalAlignment="Top" Width="106" Click="Button_Click"/>
+        <Frame Name="mainFrame" Visibility="Hidden" NavigationUIVisibility="Hidden" Content="Frame" HorizontalAlignment="Center" Height="436" VerticalAlignment="Center" Width="802"/>
 
     </Grid>
 </Window>

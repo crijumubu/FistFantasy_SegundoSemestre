@@ -28,57 +28,80 @@ namespace FirstFantasy_FinalExam
             InitializeComponent();
         }
 
-        Character character;
-        Weapon weapon;
+        string name = "";
+        string selectCharacter = "";
+        string selectWeapon = "";
+        string selectEquipment = "";
+        int count = 0;
+        bool correctData = false;
+        List<Character> createdCharacters = new List<Character>();
+        List<Weapon> createdWeapons = new List<Weapon>();
         IDescribable describable; //Se usa en especial para objetos como pociones, armadura, etc.
 
         private void BtnCreate_Click(object sender, RoutedEventArgs e)
         {
-            string name = txtName.Text;
-            string selectCharacter = cmbCharacter.Text;
-            string selectWeapon = cmbWeapon.Text;
-            string selectEquipment = cmbEqipment.Text;
-
-
-            MessageBox.Show(selectCharacter);
-            switch (cmbCharacter.Text)
+            name = txtName.Text;
+            selectCharacter = cmbCharacter.Text;
+            selectWeapon = cmbWeapon.Text;
+            selectEquipment = cmbEqipment.Text;
+            if (name!="" || selectCharacter!="" || selectWeapon!="" || selectEquipment !="")
             {
-                case "Cleric":
-                    character  = new Cleric();
-                    break;
-                case "Fighter":
-                    character = new Fighter();
-                    break;
-                case "Rogue":
-                    character = new Rogue();
-                    break;
-                case "Wizard":
-                    character = new Wizard();
-                    break;
+                correctData = true;
             }
-            character.Name = name;
+            else
+            {
+                MessageBox.Show("Haz olvidado llenar o sellecionar alguno de los campos. No podemos seguir sin estos, por favor completalos");
+            }
+            if (correctData == true)
+            {
+                switch (cmbCharacter.Text)
+                {
+                    case "Cleric":
+                        createdCharacters.Add(new Cleric());
+                        break;
+                    case "Fighter":
+                        createdCharacters.Add(new Fighter());
+                        break;
+                    case "Rogue":
+                        createdCharacters.Add(new Rogue());
+                        break;
+                    case "Wizard":
+                        createdCharacters.Add(new Wizard());
+                        break;                   
+                }
+                createdCharacters[count].Name = name;
+                createdCharacters[count].Type = selectCharacter;
 
-            switch (selectWeapon)
-            {
-                case "Ax":
-                    weapon = new Ax();
-                    break;
-                case "Sword":
-                    weapon = new Sword();
-                    break;
+                switch (selectWeapon)
+                {
+                    case "Ax":
+                        createdWeapons.Add(new Ax());
+                        break;
+                    case "Sword":
+                        createdWeapons.Add(new Sword());
+                        break;
+                }
+                createdCharacters[count].CurrentWeapon = createdWeapons[count];
+
+                switch (selectEquipment)
+                {
+                    case "Armor":
+                        describable = new Armor();
+                        break;
+                    case "Potion":
+                        describable = new Potion();
+                        break;
+                }
+                createdCharacters[count].AddToInventory(describable);
+                Character.Createdcharacters.Add(createdCharacters[count]);
+                count++;
+                MessageBox.Show("El personaje se ha creado correctamente","¡Solictud exitosa!");
             }
-            character.CurrentWeapon = selectWeapon;
-            MessageBox.Show(weapon.attack());
-            switch (selectEquipment)
-            {
-                case "Armor":
-                    describable = new Armor();
-                    break;
-                case "Potion":
-                    describable = new Potion();
-                    break;
-            }
-            character.Inventory(describable);
+        }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            mainFrame.Visibility = Visibility.Visible;
+            mainFrame.NavigationService.Navigate(new MyCharacters());
         }
     }
 }
