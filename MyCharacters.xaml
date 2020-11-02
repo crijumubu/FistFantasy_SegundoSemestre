@@ -5,11 +5,11 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:FirstFantasy_FinalExam"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="500" d:DesignWidth="1333"
       Title="MyCharacters">
 
     <Grid Background="White">
-        <DataGrid Name="datOutPut" HorizontalAlignment="Center" Height="272" Margin="0,10,0,0" VerticalAlignment="Top" Width="780">
+        <DataGrid Name="datOutPut" HorizontalAlignment="Left" Height="272" Margin="61,124,0,0" VerticalAlignment="Top" Width="780">
             <DataGrid.Resources>
                 <Style TargetType="{x:Type DataGridColumnHeader}">
                     <Setter Property="Background" Value="Coral"/>
@@ -19,13 +19,42 @@
                 </Style>
             </DataGrid.Resources>
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Type" Binding="{Binding Type}" Width="195"/>
-                <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="195"/>
-                <DataGridTextColumn Header="Level" Binding="{Binding Level}" Width="195"/>
-                <DataGridTextColumn Header="Experience" Binding="{Binding Experience}" Width="195"/>
+                <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="156"/>
+                <DataGridTextColumn Header="Type" Binding="{Binding Type}" Width="156"/>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="156"/>
+                <DataGridTextColumn Header="Level" Binding="{Binding Level}" Width="156"/>
+                <DataGridTextColumn Header="Experience" Binding="{Binding Experience}" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="Actualziar" HorizontalAlignment="Center" Height="37" Margin="0,328,0,0" VerticalAlignment="Top" Width="118" Click="Button_Click"/>
+        <Button Name="btnDelete" Content="Delete" HorizontalAlignment="Left" Height="36" Margin="468,416,0,0" VerticalAlignment="Top" Width="118" FontWeight="Bold" FontStyle="Italic" Click="BtnDelete_Click"/>
+        <Button Name="btnEdit" Content="Edit" HorizontalAlignment="Left" Height="36" Margin="312,416,0,0" VerticalAlignment="Top" Width="118" FontWeight="Bold" FontStyle="Italic" Click="btnEdit_Click"/>
 
+        <ComboBox Name="cmbCharacter" HorizontalAlignment="Left" Height="25" Margin="1122,218,0,0" VerticalAlignment="Top" Width="128">
+            <ComboBoxItem Content="Cleric"/>
+            <ComboBoxItem Content="Fighter"/>
+            <ComboBoxItem Content="Rogue"/>
+            <ComboBoxItem Content="Wizard"/>
+        </ComboBox>
+        <Button Name="btnCreate" Content="Create" HorizontalAlignment="Left" Height="36" Margin="1043,416,0,0" VerticalAlignment="Top" Width="118" Click="BtnCreate_Click" FontWeight="Bold" FontStyle="Italic"/>
+        <ComboBox Name="cmbWeapon" HorizontalAlignment="Left" Margin="1122,278,0,0" VerticalAlignment="Top" Height="25" Width="128">
+            <ComboBoxItem Content="Ax"/>
+            <ComboBoxItem Content="Boomerang"/>
+            <ComboBoxItem Content="Bow"/>
+            <ComboBoxItem Content="Sword"/>
+        </ComboBox>
+        <ComboBox Name="cmbEqipment" HorizontalAlignment="Left" Margin="1122,334,0,0" VerticalAlignment="Top" Height="25" Width="128">
+            <ComboBoxItem Content="Armor"/>
+            <ComboBoxItem Content="Boot"/>
+            <ComboBoxItem Content="Parachute"/>
+            <ComboBoxItem Content="Potion"/>
+        </ComboBox>
+        <Label Content="Character name" HorizontalAlignment="Left" Height="25" Margin="957,160,0,0" VerticalAlignment="Top" Width="133" FontStyle="Italic" FontWeight="Normal"/>
+        <TextBox Name="txtName" HorizontalAlignment="Left" Height="25" Margin="1122,160,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="128"/>
+        <Label Content="Character type" HorizontalAlignment="Left" Height="26" Margin="957,216,0,0" VerticalAlignment="Top" Width="133" FontStyle="Italic"/>
+        <Label Content="Weapon type" HorizontalAlignment="Left" Height="26" Margin="957,276,0,0" VerticalAlignment="Top" Width="133" FontStyle="Italic"/>
+        <Label Content="Select your equipment" HorizontalAlignment="Left" Height="27" Margin="957,332,0,0" VerticalAlignment="Top" Width="133" FontStyle="Italic"/>
+        <Label Content="My characters"  HorizontalAlignment="Left" Height="40" Margin="364,72,0,0" VerticalAlignment="Top" Width="174" FontSize="24" FontWeight="Bold" FontStyle="Italic"/>
+        <Label Content="Create a new character"  HorizontalAlignment="Left" Height="40" Margin="968,72,0,0" VerticalAlignment="Top" Width="268" FontSize="24" FontWeight="Bold" FontStyle="Italic"/>
+        <Label Content="Lost in the forest" HorizontalAlignment="Center" Height="57" Margin="0,10,0,0" VerticalAlignment="Top" Width="314" FontSize="36" FontStyle="Italic" FontWeight="Black"/>
     </Grid>
 </Page>

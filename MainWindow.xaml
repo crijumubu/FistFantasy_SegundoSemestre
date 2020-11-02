@@ -5,32 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FirstFantasy_FinalExam"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Lost in the forest" Height="500" Width="1333" Loaded="Window_Loaded" Icon="/Images/Icon.png">
     <Grid>
-        <ComboBox Name="cmbCharacter" HorizontalAlignment="Left" Height="23" Margin="386,119,0,0" VerticalAlignment="Top" Width="106">
-            <ComboBoxItem Content="Cleric"/>
-            <ComboBoxItem Content="Fighter"/>
-            <ComboBoxItem Content="Rogue"/>
-            <ComboBoxItem Content="Wizard"/>
-        </ComboBox>
-        <Button Name="btnCreate" Content="Create" HorizontalAlignment="Left" Height="33" Margin="229,334,0,0" VerticalAlignment="Top" Width="103" Click="BtnCreate_Click"/>
-        <ComboBox Name="cmbWeapon" HorizontalAlignment="Left" Margin="379,180,0,0" VerticalAlignment="Top" Width="120">
-            <ComboBoxItem Content="Ax"/>
-            <ComboBoxItem Content="Sword"/>
-            <ComboBoxItem Content=""/>
-            <ComboBoxItem Content=""/>
-        </ComboBox>
-        <ComboBox Name="cmbEqipment" HorizontalAlignment="Left" Margin="379,236,0,0" VerticalAlignment="Top" Width="120">
-            <ComboBoxItem Content="Armor"/>
-            <ComboBoxItem Content="Potion"/>
-        </ComboBox>
-        <Label Content="Character name" HorizontalAlignment="Left" Height="25" Margin="199,57,0,0" VerticalAlignment="Top" Width="133"/>
-        <TextBox Name="txtName" HorizontalAlignment="Left" Height="32" Margin="375,54,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="128"/>
-        <Label Content="Character type" HorizontalAlignment="Left" Height="26" Margin="199,113,0,0" VerticalAlignment="Top" Width="133"/>
-        <Label Content="Weapon type" HorizontalAlignment="Left" Height="26" Margin="199,173,0,0" VerticalAlignment="Top" Width="133"/>
-        <Label Content="Select your equipment" HorizontalAlignment="Left" Height="26" Margin="199,229,0,0" VerticalAlignment="Top" Width="133"/>
-        <Button Content="My characters" HorizontalAlignment="Left" Height="33" Margin="427,334,0,0" VerticalAlignment="Top" Width="106" Click="Button_Click"/>
-        <Frame Name="mainFrame" Visibility="Hidden" NavigationUIVisibility="Hidden" Content="Frame" HorizontalAlignment="Center" Height="436" VerticalAlignment="Center" Width="802"/>
+        <Frame Name="mainFrame" NavigationUIVisibility="Hidden" Content="" HorizontalAlignment="Center" Height="464" VerticalAlignment="Center" Width="1313"/>
 
     </Grid>
 </Window>

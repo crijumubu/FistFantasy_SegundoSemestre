@@ -5,11 +5,11 @@ using System.Text;
 
 namespace FirstFantasy_FinalExam.Classes.Equipment
 {
-    public class Sword : Weapon
+    public class Boomerang : Weapon
     {
         public override string attack()
         {
-            int damage = 16;
+            int damage = 13;
             Random random = new Random();
             int total = damage + random.Next(1, 9);
             return total.ToString();
