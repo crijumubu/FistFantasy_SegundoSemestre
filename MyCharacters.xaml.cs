@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Reflection;
 
 namespace FirstFantasy_FinalExam
 {
@@ -31,6 +32,7 @@ namespace FirstFantasy_FinalExam
         string selectEquipment = "";
         int count = 0;
         bool correctData = false;
+        bool modify = false;
         List<Character> createdCharacters = new List<Character>();
         List<Weapon> createdWeapons = new List<Weapon>();
         IDescribable describable; //Se usa en especial para objetos como pociones, armadura, etc.
@@ -47,6 +49,7 @@ namespace FirstFantasy_FinalExam
             }
             else
             {
+                correctData = false;
                 MessageBox.Show("You've forgotten to fill in or select one of the fields. We can't go on without these, please complete them", "¡Error!", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             if (correctData == true)
@@ -114,25 +117,67 @@ namespace FirstFantasy_FinalExam
                 count++;
             }
         }
+        private void BtnUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            int actualColum = datOutPut.SelectedIndex;
+            createdCharacters[actualColum].Name = txtName.Text;
+            datOutPut.Items.Clear();
+            foreach (Character c in createdCharacters)
+            {
+                datOutPut.Items.Add(c);
+            }
+            lblHolder.Content = "Create a new character";
+            btnModify.Content = "Modify";
+            btnUpdate.Visibility = Visibility.Hidden;
+            btnCreate.Visibility = Visibility.Visible;
+            txtName.Text = "";
+            modify = false;
+        }
         private void BtnDelete_Click(object sender, RoutedEventArgs e)
         {
             if (MessageBox.Show("Are you sure you want to PERMANENTLY remove all your characters?", "Remove", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
                 createdCharacters.Clear();
                 datOutPut.Items.Clear();
+                txtName.Text = "";
+                cmbCharacter.Text = "";
+                cmbWeapon.Text = "";
+                cmbEqipment.Text = "";
                 count = 0;
             }
         }
-
-        private void btnEdit_Click(object sender, RoutedEventArgs e)
+        private void BtnModify_Click(object sender, RoutedEventArgs e)
         {
-            /*string[] data = new string[5];
-            datOutPut.Items.CopyTo(data, 0);
-            txtName.Text = data[1];
-            cmbCharacter.SelectedItem = data[2];
-            cmbWeapon.SelectedItem = data[3];
-            cmbEqipment.SelectedItem = data[4];*/
-            MessageBox.Show("We're working on this functionality. We regret the inconvenience caused", "¡Error!",MessageBoxButton.OK,MessageBoxImage.Error);
+            if (modify == true)
+            {
+                lblHolder.Content = "Create a new character";
+                btnModify.Content = "Modify";
+                btnUpdate.Visibility = Visibility.Hidden;
+                btnCreate.Visibility = Visibility.Visible;
+                modify = false;
+            }
+            else
+            {
+                MessageBox.Show("If you want to modify your character you must select it in the table. Remember that you only can change your character's name", "¡Error!", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+        private void DatOutPut_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (datOutPut.SelectedIndex != -1)
+            {
+                modify = true;
+                lblHolder.Content = "Modify your character";
+                btnModify.Content = "Stop modifying";
+                btnUpdate.Visibility = Visibility.Visible;
+                btnCreate.Visibility = Visibility.Hidden;
+                Character characterSelected = datOutPut.SelectedItem as Character;
+                txtName.Text = characterSelected.Name;
+            }
+            else
+            {
+
+                modify = false;
+            }
         }
     }
 }

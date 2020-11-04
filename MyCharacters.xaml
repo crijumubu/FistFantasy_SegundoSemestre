@@ -9,7 +9,7 @@
       Title="MyCharacters">
 
     <Grid Background="White">
-        <DataGrid Name="datOutPut" HorizontalAlignment="Left" Height="272" Margin="61,124,0,0" VerticalAlignment="Top" Width="780">
+        <DataGrid Name="datOutPut" HorizontalAlignment="Left" Height="272" Margin="61,124,0,0" VerticalAlignment="Top" Width="780" CanUserAddRows="False" CanUserDeleteRows="False" SelectionChanged="DatOutPut_SelectionChanged">
             <DataGrid.Resources>
                 <Style TargetType="{x:Type DataGridColumnHeader}">
                     <Setter Property="Background" Value="Coral"/>
@@ -27,7 +27,7 @@
             </DataGrid.Columns>
         </DataGrid>
         <Button Name="btnDelete" Content="Delete" HorizontalAlignment="Left" Height="36" Margin="468,416,0,0" VerticalAlignment="Top" Width="118" FontWeight="Bold" FontStyle="Italic" Click="BtnDelete_Click"/>
-        <Button Name="btnEdit" Content="Edit" HorizontalAlignment="Left" Height="36" Margin="312,416,0,0" VerticalAlignment="Top" Width="118" FontWeight="Bold" FontStyle="Italic" Click="btnEdit_Click"/>
+        <Button Name="btnModify" Content="Modify" HorizontalAlignment="Left" Height="36" Margin="312,416,0,0" VerticalAlignment="Top" Width="118" FontWeight="Bold" FontStyle="Italic" Click="BtnModify_Click"/>
 
         <ComboBox Name="cmbCharacter" HorizontalAlignment="Left" Height="25" Margin="1122,218,0,0" VerticalAlignment="Top" Width="128">
             <ComboBoxItem Content="Cleric"/>
@@ -36,6 +36,7 @@
             <ComboBoxItem Content="Wizard"/>
         </ComboBox>
         <Button Name="btnCreate" Content="Create" HorizontalAlignment="Left" Height="36" Margin="1043,416,0,0" VerticalAlignment="Top" Width="118" Click="BtnCreate_Click" FontWeight="Bold" FontStyle="Italic"/>
+        <Button Name="btnUpdate" Content="Update" Visibility="Hidden" HorizontalAlignment="Left" Height="36" Margin="1043,416,0,0" VerticalAlignment="Top" Width="118" FontWeight="Bold" FontStyle="Italic" Click="BtnUpdate_Click"/>
         <ComboBox Name="cmbWeapon" HorizontalAlignment="Left" Margin="1122,278,0,0" VerticalAlignment="Top" Height="25" Width="128">
             <ComboBoxItem Content="Ax"/>
             <ComboBoxItem Content="Boomerang"/>
@@ -54,7 +55,7 @@
         <Label Content="Weapon type" HorizontalAlignment="Left" Height="26" Margin="957,276,0,0" VerticalAlignment="Top" Width="133" FontStyle="Italic"/>
         <Label Content="Select your equipment" HorizontalAlignment="Left" Height="27" Margin="957,332,0,0" VerticalAlignment="Top" Width="133" FontStyle="Italic"/>
         <Label Content="My characters"  HorizontalAlignment="Left" Height="40" Margin="364,72,0,0" VerticalAlignment="Top" Width="174" FontSize="24" FontWeight="Bold" FontStyle="Italic"/>
-        <Label Content="Create a new character"  HorizontalAlignment="Left" Height="40" Margin="968,72,0,0" VerticalAlignment="Top" Width="268" FontSize="24" FontWeight="Bold" FontStyle="Italic"/>
+        <Label Name="lblHolder" Content="Create a new character"  HorizontalAlignment="Left" Height="40" Margin="968,72,0,0" VerticalAlignment="Top" Width="268" FontSize="24" FontWeight="Bold" FontStyle="Italic"/>
         <Label Content="Lost in the forest" HorizontalAlignment="Center" Height="57" Margin="0,10,0,0" VerticalAlignment="Top" Width="314" FontSize="36" FontStyle="Italic" FontWeight="Black"/>
     </Grid>
 </Page>

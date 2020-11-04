@@ -5,9 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FirstFantasy_FinalExam"
         mc:Ignorable="d"
-        Title="Lost in the forest" Height="500" Width="1333" Loaded="Window_Loaded" Icon="/Images/Icon.png">
+        Title="Lost in the forest" Height="500" Width="1333" Loaded="Window_Loaded" Icon="/Extra/Icon.png">
     <Grid>
         <Frame Name="mainFrame" NavigationUIVisibility="Hidden" Content="" HorizontalAlignment="Center" Height="464" VerticalAlignment="Center" Width="1313"/>
-
     </Grid>
 </Window>

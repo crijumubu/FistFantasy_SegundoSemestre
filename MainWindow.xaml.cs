@@ -27,7 +27,7 @@ namespace FirstFantasy_FinalExam
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            mainFrame.NavigationService.Navigate(new MyCharacters());
+            mainFrame.NavigationService.Navigate(new InitialPanel());
         }
     }
 }
