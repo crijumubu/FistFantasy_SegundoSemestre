@@ -5,7 +5,7 @@ using System.Text;
 
 namespace FirstFantasy_FinalExam.Classes.Equipment
 {
-    public class Potion : IDescribable
+    public class Potion : IDescribable, IEquipment
     {
         private string recoveryValue = "10";
         public string GetRecoveryValue()
@@ -15,6 +15,11 @@ namespace FirstFantasy_FinalExam.Classes.Equipment
         public string ShowInformation()
         {
             return "This is a strange potion";
+        }
+
+        public string Type()
+        {
+            return "Potion";
         }
     }
 }

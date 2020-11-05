@@ -5,7 +5,7 @@ using System.Text;
 
 namespace FirstFantasy_FinalExam.Classes.Equipment
 {
-    class Armor : IDescribable
+    class Armor : IDescribable, IEquipment
     {
         private string armorValue = "8";
         public string GetarmorValue()
@@ -15,6 +15,11 @@ namespace FirstFantasy_FinalExam.Classes.Equipment
         public string ShowInformation()
         {
             return "This is a armor";
+        }
+
+        public string Type()
+        {
+            return "Armor";
         }
     }
 }

@@ -65,15 +65,34 @@ namespace FirstFantasy_FinalExam
             if (correctInformation == false)
             {
                 MessageBox.Show("Wrong username and/or password", "¡Error!", MessageBoxButton.OK, MessageBoxImage.Error);
+                txtUser.Text = "";
+                txtPassword.Password = "";
             }
         }
         private void BtnRegister_Click(object sender, RoutedEventArgs e)
         {
-            string textToAppend = "\n" + txtUser.Text + "|" + txtPassword.Password;
-            File.AppendAllText(path, textToAppend);
-            MessageBox.Show("Your registration was successful, go and check it out yourself by logging in", "¡Congratulations!", MessageBoxButton.OK, MessageBoxImage.Exclamation);
-            txtUser.Text = "";
-            txtPassword.Password = "";
+            if (txtUser.Text != "" && txtPassword.Password != "")
+            {
+                string textToAppend = txtUser.Text + "|" + txtPassword.Password + "\n";
+                File.AppendAllText(path, textToAppend);
+                MessageBox.Show("Your registration was successful, go and check it out yourself by logging in", "¡Congratulations!", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                txtUser.Text = "";
+                txtPassword.Password = "";
+            }
+            else
+            {
+                MessageBox.Show("Please type a valid username and/or password", "!Error¡", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+        private void BtnManage_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("You've accessed to the administrator roles. As an administrator, you have the option to delete user records and passwords Are you sure you want to permanently delete the records?", "Administrador", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                File.WriteAllText(path, "");
+                MessageBox.Show("The records were deleted successfully", "¡Successful application!");
+                txtUser.Text = "";
+                txtPassword.Password = "";
+            }
         }
     }
 }

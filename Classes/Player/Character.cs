@@ -15,6 +15,7 @@ namespace FirstFantasy_FinalExam.Classes.Player
         private string experience = "1";
         private Weapon currentWeapon;
         private List<IDescribable> inventory = new List<IDescribable>();
+        private static List<Character> createdCharacters = new List<Character>();
 
         public string ID { get => id; set => id = value; }
         public string Name { get => name; set => name = value; }
@@ -23,6 +24,7 @@ namespace FirstFantasy_FinalExam.Classes.Player
         public Weapon CurrentWeapon { get => currentWeapon; set => currentWeapon = value; }
         public List<IDescribable> Inventory { get => inventory; set => inventory = value; }
         public string Type { get => type; set => type = value; }
+        public static List<Character> CreatedCharacters { get => createdCharacters; set => createdCharacters = value; }
 
         public abstract string Taunt();
         public virtual string ShowCharacter()

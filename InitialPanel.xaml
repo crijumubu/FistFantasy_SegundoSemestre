@@ -29,5 +29,6 @@
         <Button Name="btnRegister" Content="Register" HorizontalAlignment="Left" Height="36" Margin="882,281,0,0" VerticalAlignment="Top" Width="118" FontWeight="Bold" FontStyle="Italic" Click="BtnRegister_Click"/>
         <Button Name="btnTrial" Visibility="Hidden" Content="" HorizontalAlignment="Left" Height="36" Margin="803,281,0,0" VerticalAlignment="Top" Width="118" FontWeight="Bold" FontStyle="Italic" Click="BtnSignIn_Click"/>
         <Label Content="Don't forget to visit our album of images of our characters and map in https://myalbum.com/album/fe4dsQB8f2Sc" HorizontalAlignment="Center" Height="32" Margin="0,428,0,0" VerticalAlignment="Top" Width="643"/>
+        <Button Name="btnManage" Content="Manage" HorizontalAlignment="Left" Height="36" Width="118" Margin="803,317,0,0" VerticalAlignment="Top" FontWeight="Bold" FontStyle="Italic" Click="BtnManage_Click" Background="White" BorderBrush="White"/>
     </Grid>
 </Page>

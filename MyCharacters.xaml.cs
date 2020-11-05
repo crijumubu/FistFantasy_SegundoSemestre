@@ -33,9 +33,11 @@ namespace FirstFantasy_FinalExam
         int count = 0;
         bool correctData = false;
         bool modify = false;
-        List<Character> createdCharacters = new List<Character>();
+        //static List <Character> createdCharacters = new List<Character>();
         List<Weapon> createdWeapons = new List<Weapon>();
         IDescribable describable; //Se usa en especial para objetos como pociones, armadura, etc.
+
+        //public static List<Character> CreatedCharacters { get => createdCharacters; set => createdCharacters = value; }
 
         private void BtnCreate_Click(object sender, RoutedEventArgs e)
         {
@@ -57,21 +59,21 @@ namespace FirstFantasy_FinalExam
                 switch (cmbCharacter.Text)
                 {
                     case "Cleric":
-                        createdCharacters.Add(new Cleric());
+                        Character.CreatedCharacters.Add(new Cleric());
                         break;
                     case "Fighter":
-                        createdCharacters.Add(new Fighter());
+                        Character.CreatedCharacters.Add(new Fighter());
                         break;
                     case "Rogue":
-                        createdCharacters.Add(new Rogue());
+                        Character.CreatedCharacters.Add(new Rogue());
                         break;
                     case "Wizard":
-                        createdCharacters.Add(new Wizard());
+                        Character.CreatedCharacters.Add(new Wizard());
                         break;
                 }
-                createdCharacters[count].ID = count.ToString();
-                createdCharacters[count].Name = name;
-                createdCharacters[count].Type = selectCharacter;
+                Character.CreatedCharacters[count].ID = count.ToString();
+                Character.CreatedCharacters[count].Name = name;
+                Character.CreatedCharacters[count].Type = selectCharacter;
 
                 switch (selectWeapon)
                 {
@@ -88,7 +90,7 @@ namespace FirstFantasy_FinalExam
                         createdWeapons.Add(new Sword());
                         break;
                 }
-                createdCharacters[count].CurrentWeapon = createdWeapons[count];
+                Character.CreatedCharacters[count].CurrentWeapon = createdWeapons[count];
 
                 switch (selectEquipment)
                 {
@@ -105,9 +107,9 @@ namespace FirstFantasy_FinalExam
                         describable = new Potion();
                         break;
                 }
-                createdCharacters[count].AddToInventory(describable);
+                Character.CreatedCharacters[count].AddToInventory(describable);
 
-                datOutPut.Items.Add(createdCharacters[count]);
+                datOutPut.Items.Add(Character.CreatedCharacters[count]);
 
                 MessageBox.Show("The character has been created correctly", "¡Successful application!");
                 txtName.Text = "";
@@ -120,9 +122,9 @@ namespace FirstFantasy_FinalExam
         private void BtnUpdate_Click(object sender, RoutedEventArgs e)
         {
             int actualColum = datOutPut.SelectedIndex;
-            createdCharacters[actualColum].Name = txtName.Text;
+            Character.CreatedCharacters[actualColum].Name = txtName.Text;
             datOutPut.Items.Clear();
-            foreach (Character c in createdCharacters)
+            foreach (Character c in Character.CreatedCharacters)
             {
                 datOutPut.Items.Add(c);
             }
@@ -137,7 +139,7 @@ namespace FirstFantasy_FinalExam
         {
             if (MessageBox.Show("Are you sure you want to PERMANENTLY remove all your characters?", "Remove", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
-                createdCharacters.Clear();
+                Character.CreatedCharacters.Clear();
                 datOutPut.Items.Clear();
                 txtName.Text = "";
                 cmbCharacter.Text = "";
@@ -178,6 +180,12 @@ namespace FirstFantasy_FinalExam
 
                 modify = false;
             }
+        }
+
+        private void BtnInventory_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow w = (MainWindow)Window.GetWindow(this);
+            w.mainFrame.NavigationService.Navigate(new Inventory());
         }
     }
 }
