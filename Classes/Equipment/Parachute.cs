@@ -5,11 +5,11 @@ using System.Text;
 
 namespace FirstFantasy_FinalExam.Classes.Equipment
 {
-    public class Parachute : IDescribable, IEquipment
+    public class Parachute :  IEquipment
     {
-        public string ShowInformation()
+        public int FlightTimeInS()
         {
-            return "This is a super useful parachute";
+            return 9;
         }
 
         public string Type()

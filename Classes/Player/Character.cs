@@ -6,7 +6,7 @@ using System.Text;
 
 namespace FirstFantasy_FinalExam.Classes.Player
 {
-    public abstract class Character : IDescribable
+    public abstract class Character
     {
         private string id;
         private string type;
@@ -32,10 +32,6 @@ namespace FirstFantasy_FinalExam.Classes.Player
         public virtual string ShowCharacter()
         {
             return $"Name: {name} Level: {level} XP: {experience}";
-        }
-        public string ShowInformation()
-        {
-            return "This is a level " + level + " character";
         }
     }
 }

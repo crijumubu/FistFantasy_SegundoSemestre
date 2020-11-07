@@ -5,11 +5,11 @@ using System.Text;
 
 namespace FirstFantasy_FinalExam.Classes.Equipment
 {
-    public class Boot : IDescribable, IEquipment
+    public class Boot : IEquipment
     {
-        public string ShowInformation()
+        public int CapacityInMeters()
         {
-            return "This is a boot. You gonna run super fast";
+            return 50;
         }
 
         public string Type()
