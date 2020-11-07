@@ -56,7 +56,7 @@ namespace FirstFantasy_FinalExam
                 if (txtUser.Text == user && txtPassword.Password == password)
                 {
                     correctInformation = true;
-                    MessageBox.Show("Your login was successful", "¡Welcome!", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                    MessageBox.Show("Your login was successful", "¡Welcome!", MessageBoxButton.OK, MessageBoxImage.Information);
                     MainWindow w = (MainWindow)Window.GetWindow(this);
                     w.mainFrame.NavigationService.Navigate(new MyCharacters());
                     break;
@@ -75,7 +75,7 @@ namespace FirstFantasy_FinalExam
             {
                 string textToAppend = txtUser.Text + "|" + txtPassword.Password + "\n";
                 File.AppendAllText(path, textToAppend);
-                MessageBox.Show("Your registration was successful, go and check it out yourself by logging in", "¡Congratulations!", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                MessageBox.Show("Your registration was successful, go and check it out yourself by logging in", "¡Congratulations!", MessageBoxButton.OK, MessageBoxImage.Information);
                 txtUser.Text = "";
                 txtPassword.Password = "";
             }

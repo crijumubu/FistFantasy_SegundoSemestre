@@ -13,8 +13,9 @@ namespace FirstFantasy_FinalExam.Classes.Player
         private string name;
         private string level = "1";
         private string experience = "1";
+        private static int change = 0;
         private Weapon currentWeapon;
-        private List<IDescribable> inventory = new List<IDescribable>();
+        private List<IEquipment> inventory = new List<IEquipment>();
         private static List<Character> createdCharacters = new List<Character>();
 
         public string ID { get => id; set => id = value; }
@@ -22,9 +23,10 @@ namespace FirstFantasy_FinalExam.Classes.Player
         public string Level { get => level; set => level = value; }
         public string Experience { get => experience; set => experience = value; }
         public Weapon CurrentWeapon { get => currentWeapon; set => currentWeapon = value; }
-        public List<IDescribable> Inventory { get => inventory; set => inventory = value; }
+        public List<IEquipment> Inventory { get => inventory; set => inventory = value; }
         public string Type { get => type; set => type = value; }
         public static List<Character> CreatedCharacters { get => createdCharacters; set => createdCharacters = value; }
+        public static int Change { get => change; set => change = value; }
 
         public abstract string Taunt();
         public virtual string ShowCharacter()
@@ -34,10 +36,6 @@ namespace FirstFantasy_FinalExam.Classes.Player
         public string ShowInformation()
         {
             return "This is a level " + level + " character";
-        }
-        public void AddToInventory(IDescribable item)
-        {
-            inventory.Add(item);
         }
     }
 }

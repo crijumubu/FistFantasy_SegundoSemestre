@@ -58,5 +58,7 @@
         <Label Name="lblHolder" Content="Create a new character"  HorizontalAlignment="Left" Height="40" Margin="968,72,0,0" VerticalAlignment="Top" Width="268" FontSize="24" FontWeight="Bold" FontStyle="Italic"/>
         <Label Content="Lost in the forest" HorizontalAlignment="Center" Height="57" Margin="0,10,0,0" VerticalAlignment="Top" Width="314" FontSize="36" FontStyle="Italic" FontWeight="Black"/>
         <Button Name="btnInventory" Content="Inventory" HorizontalAlignment="Left" Height="36" Margin="392,416,0,0" VerticalAlignment="Top" Width="118" FontWeight="Bold" FontStyle="Italic" Click="BtnInventory_Click"/>
+        <Button Name="btnUpdateTable" Visibility="Hidden" Content="Update the table" HorizontalAlignment="Left" Margin="63,374,0,0" VerticalAlignment="Top" FontWeight="Bold" FontStyle="Italic" BorderBrush="#FFF0F0F0" Background="#FFF0F0F0" Click="BtnUpdateTable_Click"/>
+        <Button Name="btnGoBack" Content="Go Back" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="28" Width="57" Click="BtnGoBack_Click" FontWeight="Bold" FontStyle="Italic" Background="White" BorderBrush="White"/>
     </Grid>
 </Page>

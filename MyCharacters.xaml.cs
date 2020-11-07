@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Reflection;
+using System.Linq;
 
 namespace FirstFantasy_FinalExam
 {
@@ -25,19 +26,21 @@ namespace FirstFantasy_FinalExam
         public MyCharacters()
         {
             InitializeComponent();
+            if (Character.Change != 0)
+            {
+                btnUpdateTable.Visibility = Visibility.Visible;
+            }
         }
         string name = "";
         string selectCharacter = "";
         string selectWeapon = "";
         string selectEquipment = "";
-        int count = 0;
+        static int countCharacters = 0;
+        int countWeapons = 0;
         bool correctData = false;
         bool modify = false;
-        //static List <Character> createdCharacters = new List<Character>();
         List<Weapon> createdWeapons = new List<Weapon>();
-        IDescribable describable; //Se usa en especial para objetos como pociones, armadura, etc.
-
-        //public static List<Character> CreatedCharacters { get => createdCharacters; set => createdCharacters = value; }
+        IEquipment equipment; //Se usa en especial para objetos como pociones, armadura, etc.
 
         private void BtnCreate_Click(object sender, RoutedEventArgs e)
         {
@@ -71,9 +74,9 @@ namespace FirstFantasy_FinalExam
                         Character.CreatedCharacters.Add(new Wizard());
                         break;
                 }
-                Character.CreatedCharacters[count].ID = count.ToString();
-                Character.CreatedCharacters[count].Name = name;
-                Character.CreatedCharacters[count].Type = selectCharacter;
+                Character.CreatedCharacters[countCharacters].ID = countCharacters.ToString();
+                Character.CreatedCharacters[countCharacters].Name = name;
+                Character.CreatedCharacters[countCharacters].Type = selectCharacter;
 
                 switch (selectWeapon)
                 {
@@ -90,33 +93,40 @@ namespace FirstFantasy_FinalExam
                         createdWeapons.Add(new Sword());
                         break;
                 }
-                Character.CreatedCharacters[count].CurrentWeapon = createdWeapons[count];
+                Character.CreatedCharacters[countCharacters].CurrentWeapon = createdWeapons[countWeapons];
+                Character.CreatedCharacters[countCharacters].Inventory.Add(createdWeapons[countWeapons]);
 
                 switch (selectEquipment)
                 {
                     case "Armor":
-                        describable = new Armor();
+                        equipment = new Armor();
                         break;
                     case "Boot":
-                        describable = new Boot();
+                        equipment = new Boot();
                         break;
                     case "Parachute":
-                        describable = new Parachute();
+                        equipment = new Parachute();
                         break;
                     case "Potion":
-                        describable = new Potion();
+                        equipment = new Potion();
                         break;
                 }
-                Character.CreatedCharacters[count].AddToInventory(describable);
+                Character.CreatedCharacters[countCharacters].Inventory.Add(equipment);
 
-                datOutPut.Items.Add(Character.CreatedCharacters[count]);
+                datOutPut.Items.Clear();
+                foreach (Character c in Character.CreatedCharacters)
+                {
+                    datOutPut.Items.Add(c);
+                }
 
-                MessageBox.Show("The character has been created correctly", "¡Successful application!");
+                btnUpdateTable.Visibility = Visibility.Hidden;
+                MessageBox.Show("The character has been created correctly", "¡Successful application!", MessageBoxButton.OK, MessageBoxImage.Information);
                 txtName.Text = "";
                 cmbCharacter.Text = "";
                 cmbWeapon.Text = "";
                 cmbEqipment.Text = "";
-                count++;
+                countCharacters++;
+                Character.Change = 0;
             }
         }
         private void BtnUpdate_Click(object sender, RoutedEventArgs e)
@@ -145,7 +155,8 @@ namespace FirstFantasy_FinalExam
                 cmbCharacter.Text = "";
                 cmbWeapon.Text = "";
                 cmbEqipment.Text = "";
-                count = 0;
+                countCharacters = 0;
+                countWeapons = 0;
             }
         }
         private void BtnModify_Click(object sender, RoutedEventArgs e)
@@ -186,6 +197,22 @@ namespace FirstFantasy_FinalExam
         {
             MainWindow w = (MainWindow)Window.GetWindow(this);
             w.mainFrame.NavigationService.Navigate(new Inventory());
+        }
+
+        private void BtnUpdateTable_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (Character c in Character.CreatedCharacters)
+            {
+                datOutPut.Items.Add(c);
+            }
+            btnUpdateTable.Visibility = Visibility.Hidden;
+            MessageBox.Show("All your characters have been loaded. Check it out by yourself", "Successful application", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        private void BtnGoBack_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow w = (MainWindow)Window.GetWindow(this);
+            w.mainFrame.NavigationService.Navigate(new InitialPanel());
         }
     }
 }

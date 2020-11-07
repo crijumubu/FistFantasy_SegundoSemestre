@@ -9,13 +9,36 @@
       Title="Inventory" Background="White">
     <Grid>
         <Label Content="Lost in the forest" HorizontalAlignment="Center" Height="57" Margin="0,10,0,0" VerticalAlignment="Top" Width="314" FontSize="36" FontStyle="Italic" FontWeight="Black"/>
-
-        <Button Name="btnSearch" Content="Search" HorizontalAlignment="Left" Margin="1015,261,0,0" VerticalAlignment="Top" Click="BtnSearch_Click" Height="36" Width="118" FontWeight="Bold" FontStyle="Italic"/>
-        <TextBlock Name="txtOutputInventory" HorizontalAlignment="Left" Height="310" Margin="159,129,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="363" Background="#FFD8D8D8"/>
-        <ComboBox Name="cmbMyCharacters" HorizontalAlignment="Left" Margin="931,157,0,0" VerticalAlignment="Top" Width="128" Height="25"/>
-        <Button Name="btnView" Content="View" HorizontalAlignment="Left" Margin="856,261,0,0" VerticalAlignment="Top" Click="BtnView_Click" Height="36" Width="118" FontWeight="Bold" FontStyle="Italic"/>
-        <Button Name="btnGoBack" Content="Go Back" HorizontalAlignment="Left" Margin="936,333,0,0" VerticalAlignment="Top" Height="36" Width="118" Click="BtnGoBack_Click" FontWeight="Bold" FontStyle="Italic"/>
+        <TextBlock Name="txtOutputInventory" HorizontalAlignment="Left" Height="310" Margin="198,124,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="284" Background="#FFD8D8D8"/>
+        <Button Name="btnSearch" Content="Search" HorizontalAlignment="Left" Margin="936,261,0,0" VerticalAlignment="Top" Click="BtnSearch_Click" Height="36" Width="118" FontWeight="Bold" FontStyle="Italic"/>
+        <ComboBox Name="cmbMyCharacters" Visibility="Hidden" HorizontalAlignment="Left" Margin="931,135,0,0" VerticalAlignment="Top" Width="128" Height="25"/>
+        <Button Name="btnView" Visibility="Hidden" Content="View the character's equipment" HorizontalAlignment="Left" Margin="250,402,0,0" VerticalAlignment="Top" Click="BtnView_Click" Height="32" Width="180" FontWeight="Bold" FontStyle="Italic" Background="#FFD8D8D8" BorderBrush="#FFD8D8D8"/>
+        <Button Name="btnGoBack" Content="Go Back" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="28" Width="57" Click="BtnGoBack_Click" FontWeight="Bold" FontStyle="Italic" Background="White" BorderBrush="White"/>
         <Label Content="Details of your equipment" HorizontalAlignment="Left" Height="51" Margin="186,73,0,0" VerticalAlignment="Top" Width="308" FontWeight="Bold" FontStyle="Italic" FontSize="24"/>
-        <Label Content="Pick one of your characters" HorizontalAlignment="Left" Height="57" Margin="837,73,0,0" VerticalAlignment="Top" Width="316" FontWeight="Bold" FontStyle="Italic" FontSize="24"/>
+        <Label Name="lblText0" Visibility="Hidden" Content="Pick one of your characters" HorizontalAlignment="Left" Height="57" Margin="837,73,0,0" VerticalAlignment="Top" Width="316" FontWeight="Bold" FontStyle="Italic" FontSize="24"/>
+        <Label Name="lblText1" Visibility="Hidden" Content="Add new objects to your selected character" HorizontalAlignment="Left" Height="35" Margin="764,176,0,0" VerticalAlignment="Top" Width="231" FontWeight="Normal" FontStyle="Italic"/>
+        <Label Name="lblText2" Visibility="Hidden" Content="Weapons" HorizontalAlignment="Left" Height="36" Margin="849,213,0,0" VerticalAlignment="Top" Width="61" FontWeight="Normal" FontStyle="Italic"/>
+        <ComboBox Name="cmbAddWeapons" Visibility="Hidden" HorizontalAlignment="Left" Height="25" Margin="931,218,0,0" VerticalAlignment="Top" Width="128">
+            <ComboBoxItem Content="Ax"/>
+            <ComboBoxItem Content="Boomerang"/>
+            <ComboBoxItem Content="Bow"/>
+            <ComboBoxItem Content="Sword"/>
+        </ComboBox>
+        <Label Name="lblText3" Visibility="Hidden" Content="Equipment" HorizontalAlignment="Left" Height="36" Margin="849,263,0,0" VerticalAlignment="Top" Width="77" FontWeight="Normal" FontStyle="Italic"/>
+        <ComboBox Name="cmbAddEquipment" Visibility="Hidden" HorizontalAlignment="Left" Height="25" Margin="931,268,0,0" VerticalAlignment="Top" Width="128">
+            <ComboBoxItem Content="Armor"/>
+            <ComboBoxItem Content="Boot"/>
+            <ComboBoxItem Content="Parachute"/>
+            <ComboBoxItem Content="Potion"/>
+        </ComboBox>
+        <Label Name="lblText4" Visibility="Hidden" Content="Select your current weapon" HorizontalAlignment="Left" Height="35" Margin="764,319,0,0" VerticalAlignment="Top" Width="162" FontWeight="Normal" FontStyle="Italic"/>
+        <ComboBox Name="cmbCurrentWeapon" Visibility="Hidden" HorizontalAlignment="Left" Height="25" Margin="931,353,0,0" VerticalAlignment="Top" Width="128"/>
+        <Button Name="btnUpdate" Visibility="Hidden" Content="Update Changes" HorizontalAlignment="Left" Margin="813,400,0,0" VerticalAlignment="Top" Height="36" Width="118" FontWeight="Bold" FontStyle="Italic" Click="BtnUpdate_Click"/>
+        <Button Name="btnChangeCharacter" Visibility="Hidden" Content="Change Character" HorizontalAlignment="Left" Margin="1059,400,0,0" VerticalAlignment="Top" Height="36" Width="118" FontWeight="Bold" FontStyle="Italic" Click="BtnChangeCharacter_Click"/>
+        <TextBlock Name="txtDescriptionView" Visibility="Hidden" HorizontalAlignment="Left" Height="94" Margin="32,343,0,0" Text="If you want to view your character's equipment it's unnecessary to complete all the information, you just have to pick the character you prefer, that's all" TextWrapping="Wrap" VerticalAlignment="Top" Width="166" FontStyle="Italic"/>
+        <TextBlock Name="txtDescriptionCharacter" Visibility="Hidden" HorizontalAlignment="Center" Height="133" Margin="0,124,0,0" Text="If you want to update your character's equipment, you just have to let us know at least one thing that you want to change at your character's equipment" TextWrapping="Wrap" VerticalAlignment="Top" Width="166" FontStyle="Italic"/>
+        <Button Name="btnDeleteMessages" Visibility="Hidden" Content="Delete messages" HorizontalAlignment="Left" Height="30" Margin="1215,10,0,0" VerticalAlignment="Top" Width="98" BorderBrush="White" Background="White" FontWeight="Bold" FontStyle="Italic" Click="BtnDeleteMessages_Click"/>
+        <Label Name="lblCharacter" Visibility="Hidden" Content="" HorizontalAlignment="Left" Height="25" Margin="906,135,0,0" VerticalAlignment="Top" Width="177" FontWeight="Bold" FontStyle="Italic"/>
+        <Button Name="btnChangeCharacterTrial" Visibility="Hidden" Content="Change Character" HorizontalAlignment="Left" Margin="1059,400,0,0" VerticalAlignment="Top" Height="36" Width="118" FontWeight="Bold" FontStyle="Italic" Click="BtnChangeCharacter_Click"/>
     </Grid>
 </Page>

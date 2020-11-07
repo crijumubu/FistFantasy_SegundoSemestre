@@ -5,7 +5,7 @@ using System.Text;
 
 namespace FirstFantasy_FinalExam.Classes.Equipment
 {
-    class Ax : Weapon, IEquipment
+    class Ax : Weapon
     {
         public override string attack()
         {
@@ -15,7 +15,7 @@ namespace FirstFantasy_FinalExam.Classes.Equipment
             return total.ToString();
         }
 
-        public string Type()
+        public override string Type()
         {
             return "Ax";
         }
