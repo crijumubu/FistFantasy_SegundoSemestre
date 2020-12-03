@@ -28,7 +28,6 @@
         <Button Name="btnSignIn" Content="Sign in" HorizontalAlignment="Left" Height="36" Margin="726,251,0,0" VerticalAlignment="Top" Width="118" FontWeight="Bold" FontStyle="Italic" Click="BtnSignIn_Click"/>
         <Button Name="btnRegister" Content="Register" HorizontalAlignment="Left" Height="36" Margin="882,251,0,0" VerticalAlignment="Top" Width="118" FontWeight="Bold" FontStyle="Italic" Click="BtnRegister_Click"/>
         <Button Name="btnTrial" Visibility="Hidden" Content="" HorizontalAlignment="Left" Height="36" Margin="803,281,0,0" VerticalAlignment="Top" Width="118" FontWeight="Bold" FontStyle="Italic" Click="BtnSignIn_Click"/>
-        <Label Content="Don't forget to take a look to our album of images of our characters and map on https://myalbum.com/album/fe4dsQB8f2Sc" HorizontalAlignment="Center" Height="32" Margin="0,428,0,0" VerticalAlignment="Top" Width="670"/>
         <Button Name="btnManage" Content="Manage" HorizontalAlignment="Left" Height="36" Width="118" Margin="803,287,0,0" VerticalAlignment="Top" FontWeight="Bold" FontStyle="Italic" Click="BtnManage_Click" Background="White" BorderBrush="White"/>
         <ComboBox Name="cmbEquipment" HorizontalAlignment="Left" Height="25" Margin="133,254,0,0" VerticalAlignment="Top" Width="128">
             <ComboBoxItem Content="Armor"/>
@@ -37,5 +36,7 @@
             <ComboBoxItem Content="Potion"/>
         </ComboBox>
         <Label Content="These are our Equipment" HorizontalAlignment="Left" Height="48" Margin="91,200,0,0" VerticalAlignment="Top" Width="219" FontSize="18" FontStyle="Italic" FontWeight="Bold"/>
+        <WebBrowser Name="webOutPut" Source="https://myalbum.com/album/fe4dsQB8f2Sc" Margin="28,14,27,81"/>
+        <Button Name="btnWeb" Content="Take a look to our characters and map" HorizontalAlignment="Center" Margin="0,401,0,0" VerticalAlignment="Top" Click="Button_Click" Height="36" Width="228" FontWeight="Bold" FontStyle="Italic"/>
     </Grid>
 </Page>
