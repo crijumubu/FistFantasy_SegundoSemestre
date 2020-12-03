@@ -22,7 +22,7 @@ namespace FirstFantasy_FinalExam
     /// </summary>
     public partial class InitialPanel : Page
     {
-        string pathFolder = @"C: \Users\Administrador\source\Repos\FistFantasy_FinalExam\Extra";
+        string pathFolder = @"C:\Users\Administrador\source\Repos\FistFantasy_FinalExam\Extra";
         string pathTxT = @"C:\Users\Administrador\source\Repos\FistFantasy_FinalExam\Extra\UsersAndPasswords.txt";
         public InitialPanel()
         {
@@ -126,12 +126,16 @@ namespace FirstFantasy_FinalExam
             if (webOutPut.Visibility == Visibility.Hidden)
             {
                 webOutPut.Visibility = Visibility.Visible;
+                btnWeb.HorizontalAlignment = HorizontalAlignment.Center;
+                btnWeb.Margin = new Thickness(0,401,0,0);
                 btnWeb.Content = "Exit the album";
                 btnWeb.Width = 97;
             }
             else
             {
                 webOutPut.Visibility = Visibility.Hidden;
+                btnWeb.HorizontalAlignment = HorizontalAlignment.Left;
+                btnWeb.Margin = new Thickness(200, 305, 0, 0);
                 btnWeb.Content = "Take a look to our characters and map";
                 btnWeb.Width = 228;
             }

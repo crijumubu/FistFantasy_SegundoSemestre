@@ -9,34 +9,34 @@
       Title="InitialPanel" Background="White">
     <Grid>
         <Label Content="Lost in the forest" HorizontalAlignment="Center" Height="57" Margin="0,10,0,0" VerticalAlignment="Top" Width="314" FontSize="36" FontStyle="Italic" FontWeight="Black"/>
-        <ComboBox Name="cmbCharacter" HorizontalAlignment="Left" Height="25" Margin="134,153,0,0" VerticalAlignment="Top" Width="128">
+        <ComboBox Name="cmbCharacter" HorizontalAlignment="Left" Height="25" Margin="112,171,0,0" VerticalAlignment="Top" Width="128">
             <ComboBoxItem Content="Cleric"/>
             <ComboBoxItem Content="Fighter"/>
             <ComboBoxItem Content="Rogue"/>
             <ComboBoxItem Content="Wizard"/>
         </ComboBox>
-        <Label Content="These are our characters" HorizontalAlignment="Left" Height="49" Margin="90,99,0,0" VerticalAlignment="Top" Width="214" FontSize="18" FontStyle="Italic" FontWeight="Bold"/>
-        <ComboBox Name="cmbMap" HorizontalAlignment="Left" Height="24" Margin="136,359,0,0" VerticalAlignment="Top" Width="128">
+        <Label Content="These are our characters" HorizontalAlignment="Left" Height="49" Margin="68,117,0,0" VerticalAlignment="Top" Width="214" FontSize="18" FontStyle="Italic" FontWeight="Bold"/>
+        <ComboBox Name="cmbMap" HorizontalAlignment="Left" Height="24" Margin="230,264,0,0" VerticalAlignment="Top" Width="128">
             <ComboBoxItem Content="Forest"/>
         </ComboBox>
-        <Label Content="This is our map" HorizontalAlignment="Left" Height="48" Margin="130,305,0,0" VerticalAlignment="Top" Width="140" FontSize="18" FontStyle="Italic" FontWeight="Bold"/>
-        <Label Content="Username:" HorizontalAlignment="Left" Height="37" Margin="580,156,0,0" VerticalAlignment="Top" Width="106" FontSize="18" FontWeight="Bold" FontStyle="Italic"/>
-        <TextBox Name="txtUser" HorizontalAlignment="Left" Height="25" Margin="716,162,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="128"/>
-        <Label Content="Password:" HorizontalAlignment="Left" Height="36" Margin="882,156,0,0" VerticalAlignment="Top" Width="106" FontSize="18" FontWeight="Bold" FontStyle="Italic"/>
-        <PasswordBox Name="txtPassword" HorizontalAlignment="Left" Margin="1023,162,0,0" VerticalAlignment="Top" Height="24" Width="128"/>
-        <Label Name="lblHeader" Content="Log in" HorizontalAlignment="Left" Height="49" Margin="829,99,0,0" VerticalAlignment="Top" Width="66" FontSize="18" FontStyle="Italic" FontWeight="Bold"/>
-        <Button Name="btnSignIn" Content="Sign in" HorizontalAlignment="Left" Height="36" Margin="726,251,0,0" VerticalAlignment="Top" Width="118" FontWeight="Bold" FontStyle="Italic" Click="BtnSignIn_Click"/>
-        <Button Name="btnRegister" Content="Register" HorizontalAlignment="Left" Height="36" Margin="882,251,0,0" VerticalAlignment="Top" Width="118" FontWeight="Bold" FontStyle="Italic" Click="BtnRegister_Click"/>
+        <Label Content="This is our map" HorizontalAlignment="Left" Height="48" Margin="224,210,0,0" VerticalAlignment="Top" Width="140" FontSize="18" FontStyle="Italic" FontWeight="Bold"/>
+        <Label Content="Username:" HorizontalAlignment="Left" Height="37" Margin="662,174,0,0" VerticalAlignment="Top" Width="106" FontSize="18" FontWeight="Bold" FontStyle="Italic"/>
+        <TextBox Name="txtUser" HorizontalAlignment="Left" Height="25" Margin="798,180,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="128"/>
+        <Label Content="Password:" HorizontalAlignment="Left" Height="36" Margin="964,174,0,0" VerticalAlignment="Top" Width="106" FontSize="18" FontWeight="Bold" FontStyle="Italic"/>
+        <PasswordBox Name="txtPassword" HorizontalAlignment="Left" Margin="1105,180,0,0" VerticalAlignment="Top" Height="24" Width="128"/>
+        <Label Name="lblHeader" Content="Log in" HorizontalAlignment="Left" Height="49" Margin="911,117,0,0" VerticalAlignment="Top" Width="66" FontSize="18" FontStyle="Italic" FontWeight="Bold"/>
+        <Button Name="btnSignIn" Content="Sign in" HorizontalAlignment="Left" Height="36" Margin="808,252,0,0" VerticalAlignment="Top" Width="118" FontWeight="Bold" FontStyle="Italic" Click="BtnSignIn_Click"/>
+        <Button Name="btnRegister" Content="Register" HorizontalAlignment="Left" Height="36" Margin="964,252,0,0" VerticalAlignment="Top" Width="118" FontWeight="Bold" FontStyle="Italic" Click="BtnRegister_Click"/>
         <Button Name="btnTrial" Visibility="Hidden" Content="" HorizontalAlignment="Left" Height="36" Margin="803,281,0,0" VerticalAlignment="Top" Width="118" FontWeight="Bold" FontStyle="Italic" Click="BtnSignIn_Click"/>
-        <Button Name="btnManage" Content="Manage" HorizontalAlignment="Left" Height="36" Width="118" Margin="803,287,0,0" VerticalAlignment="Top" FontWeight="Bold" FontStyle="Italic" Click="BtnManage_Click" Background="White" BorderBrush="White"/>
-        <ComboBox Name="cmbEquipment" HorizontalAlignment="Left" Height="25" Margin="133,254,0,0" VerticalAlignment="Top" Width="128">
+        <Button Name="btnManage" Content="Manage" HorizontalAlignment="Left" Height="36" Width="118" Margin="885,305,0,0" VerticalAlignment="Top" FontWeight="Bold" FontStyle="Italic" Click="BtnManage_Click" Background="White" BorderBrush="White"/>
+        <ComboBox Name="cmbEquipment" HorizontalAlignment="Left" Height="25" Margin="356,172,0,0" VerticalAlignment="Top" Width="128">
             <ComboBoxItem Content="Armor"/>
             <ComboBoxItem Content="Boot"/>
             <ComboBoxItem Content="Parachute"/>
             <ComboBoxItem Content="Potion"/>
         </ComboBox>
-        <Label Content="These are our Equipment" HorizontalAlignment="Left" Height="48" Margin="91,200,0,0" VerticalAlignment="Top" Width="219" FontSize="18" FontStyle="Italic" FontWeight="Bold"/>
-        <WebBrowser Name="webOutPut" Source="https://myalbum.com/album/fe4dsQB8f2Sc" Margin="28,14,27,81"/>
-        <Button Name="btnWeb" Content="Take a look to our characters and map" HorizontalAlignment="Center" Margin="0,401,0,0" VerticalAlignment="Top" Click="Button_Click" Height="36" Width="228" FontWeight="Bold" FontStyle="Italic"/>
+        <Label Content="These are our Equipment" HorizontalAlignment="Left" Height="48" Margin="314,118,0,0" VerticalAlignment="Top" Width="219" FontSize="18" FontStyle="Italic" FontWeight="Bold"/>
+        <WebBrowser Name="webOutPut" Source="https://myalbum.com/album/fe4dsQB8f2Sc" Margin="28,14,27,81" Visibility="Hidden"/>
+        <Button Name="btnWeb" Content="Take a look to our characters and map" HorizontalAlignment="Left" Margin="179,305,0,0" VerticalAlignment="Top" Click="Button_Click" Height="36" Width="228" FontWeight="Bold" FontStyle="Italic" Background="White" BorderBrush="White"/>
     </Grid>
 </Page>

@@ -6,10 +6,16 @@
     <UseWPF>true</UseWPF>
     <UseWindowsForms>true</UseWindowsForms>
     <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+    <AssemblyName>LostInTheForest</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
-    <Resource Include="Extra\Icon.png" />
+    <None Remove="Icon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Icon.png" />
   </ItemGroup>
 
 </Project>
