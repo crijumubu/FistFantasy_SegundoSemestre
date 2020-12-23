@@ -22,8 +22,8 @@ namespace FirstFantasy_FinalExam
     /// </summary>
     public partial class InitialPanel : Page
     {
-        string pathFolder = @"C:\Users\Administrador\source\Repos\FistFantasy_FinalExam\Extra";
-        string pathTxT = @"C:\Users\Administrador\source\Repos\FistFantasy_FinalExam\Extra\UsersAndPasswords.txt";
+        string pathFolder = @"C:\Users\user\source\Repos\First Fantasy\Extra";
+        string pathTxT = @"C:\Users\user\source\Repos\First Fantasy\Extra\UsersAndPasswords.txt";
         public InitialPanel()
         {
             InitializeComponent();
@@ -36,6 +36,7 @@ namespace FirstFantasy_FinalExam
             if (File.Exists(pathTxT) == false)
             {
                 StreamWriter stream = new StreamWriter(pathTxT);
+                stream.Close();
             }
         }
         private void BtnSignIn_Click(object sender, RoutedEventArgs e)
