@@ -22,8 +22,8 @@ namespace FirstFantasy_FinalExam
     /// </summary>
     public partial class InitialPanel : Page
     {
-        string pathFolder = @"C:\Users\user\source\Repos\FistFantasy_FinalExam\Extra";
-        string pathTxT = @"C:\Users\user\source\Repos\First Fantasy\Extra\UsersAndPasswords.txt";
+        string pathFolder = @"C:\Users\Administrador\source\Repos\FistFantasy_FinalExam\Extra";
+        string pathTxT = @"C:\Users\Administrador\source\Repos\FistFantasy_FinalExam\Extra\UsersAndPasswords.txt";
         public InitialPanel()
         {
             InitializeComponent();
